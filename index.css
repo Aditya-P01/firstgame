@@ -1,0 +1,113 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #00bafc;
+  height: 100vh;
+  padding: 20px;
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: questionAnimation 5s infinite;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.timer-display {
+  color: white;
+  font-size: 80px;
+  animation: blink 1s infinite;
+}
+
+.bomb-image {
+  width: 250px;
+  margin-top: 20px;
+  animation: shake 0.5s infinite;
+}
+
+.user-input {
+  text-align: center;
+  border: 0px;
+  border-radius: 4px;
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+#resBtn {
+  margin-top: 20px;
+}
+
+.progress {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+}
+
+.confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+}
+
+@keyframes questionAnimation {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.0); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
